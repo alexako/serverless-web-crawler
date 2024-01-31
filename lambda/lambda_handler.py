@@ -5,8 +5,7 @@ import urllib3
 
 def handler(event, context):
     print(event)
-    payload = json.loads(event["Records"][0]["body"])
-    targetURL = payload["url"]
+    targetURL = event["url"]
 
     links = findLinks(targetURL)
 
